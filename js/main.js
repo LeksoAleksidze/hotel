@@ -31,3 +31,27 @@ hum.addEventListener("click", () =>{
     $(this).addClass("active");
   });
 
+// TIMER
+const timer = document.getElementById('time');
+const popup = document.getElementById('popup');
+const fullContent = document.getElementById('fullContent');
+let  count = 10; 
+
+
+
+function update() {
+
+	let seconds = count;
+
+    fullContent.style.opacity = "0.09";
+
+	if(  seconds === 0){
+		clearInterval(x);
+		popup.style.display = "none";
+		fullContent.style.opacity = "1";
+	  }
+
+	timer.innerHTML = "00:0" + seconds;
+	count--;
+}
+let x =  setInterval(update, 1000);
