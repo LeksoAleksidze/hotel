@@ -35,7 +35,8 @@ hum.addEventListener("click", () =>{
 const timer = document.getElementById('time');
 const popup = document.getElementById('popup');
 const fullContent = document.getElementById('fullContent');
-let  count = 10; 
+const body = document.querySelector('body');
+let  count = 5; 
 
 
 
@@ -44,11 +45,12 @@ function update() {
 	let seconds = count;
 
     fullContent.style.opacity = "0.09";
-
+    body.classList.add('noscroll');
 	if(  seconds === 0){
 		clearInterval(x);
 		popup.style.display = "none";
 		fullContent.style.opacity = "1";
+		body.classList.remove('noscroll');
 	  }
 
 	timer.innerHTML = "00:0" + seconds;

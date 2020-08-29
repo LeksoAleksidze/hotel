@@ -36,6 +36,12 @@ a:focus
 	outline: none!important;
 }
 
+body.noscroll
+{
+	position: fixed;
+	overflow: hidden;
+	pointer-events: none;
+}
 /*START POPUP*/
 #popup .content-box
 {
@@ -80,9 +86,23 @@ header.active
 {
 	position: fixed;
 	left: 0;
-	right: 0;
 	top: 0;
+	min-width: 100%;
 	z-index: 999;
+	background-color: #fff;
+	border-bottom: 1px solid #000;
+	animation: fadeinAnim .4s ease-in-out;
+}
+@keyframes fadeinAnim
+{
+	0%{
+		opacity: 0;
+		transform: translateY(-60px);
+	}
+	100%{
+		transform: translateY(0px);
+		opacity: 1;
+	}
 }
 header #hum
 {
